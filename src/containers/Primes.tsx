@@ -1,16 +1,25 @@
 import React, {useState} from 'react';
 import PrimeMatrix from './PrimesMatrix';
+import {getPrimes} from '../components/getPrimes';
 import './Primes.scss';
 
 const Primes = () => {
-  const [key, setKey] = useState('');
-  const [filterKey, setFilterKey] = useState('');
+  const [key, setKey] = useState(null);
+  const [filterKey, setFilterKey] = useState(null);
+
+  const listPrimes = () => {
+    if(!key){
+      return;
+    }
+    const primes = getPrimes(key);
+    setFilterKey(primes);
+  }
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-lg-12">
-          <div className="">
+          <div className="primes-container">
             <div className="input-group mb-3">
               <input
                 type="text"

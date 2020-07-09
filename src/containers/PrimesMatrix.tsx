@@ -1,15 +1,20 @@
 import React, {useState} from 'react';
 import './Primes.scss';
 
-const PrimeMatrix = (props) => {
+interface Props {
+  primes: string;
+}
+
+const PrimeMatrix = (props: Props)  => {
   const [key, setKey] = useState('');
-  const [filterKey, setFilterKey] = useState('');
+
+  const {primes} = props;
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-lg-12">
-          Matrix
+          {primes}
         </div>
       </div>
     </div>
