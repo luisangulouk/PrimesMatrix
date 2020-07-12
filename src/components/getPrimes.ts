@@ -25,3 +25,21 @@ export const getPrimes = (count: number) => {
   }
   return primes;
 }
+
+export const drawMatrix = (primos: number[]) => {
+  let matrix = [];
+  /*
+    0 i*i
+    1 i*i-1 i*i
+    2 i*i-2 i*i-1 i*i
+  */
+  for (let i = 0; i < primos.length; i++) {
+    let row = [];
+    for (let j = 0; j <= i; j++) {
+      row.push(primos[j] * primos[i]);
+    }
+    matrix.push(row);
+  }
+
+  return matrix;
+};

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Primes.scss';
 
 interface Props {
-  primes: string;
+  primes: any[];
 }
 
 const PrimeMatrix = (props: Props)  => {
@@ -14,7 +14,11 @@ const PrimeMatrix = (props: Props)  => {
     <div className="container">
       <div className="row">
         <div className="col-lg-12">
-          {primes}
+          {primes && primes.map(elem => {
+            return (<div key={elem}>{elem && elem.map(prime => {
+              return (<div>{prime}</div>)
+            })}</div>)
+          })}
         </div>
       </div>
     </div>
