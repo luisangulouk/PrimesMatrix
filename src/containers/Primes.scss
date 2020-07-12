@@ -3,12 +3,23 @@
 }
 
 .matrix {
+  &-container {
+    overflow: scroll;
+  }
   &-row {
     display: block;
     &_cell {
       display: table-cell;
       padding: 10px;
-      min-width: 50px;
+      &--small {
+        min-width: 50px;
+      }
+      &--mid {
+        min-width: 60px;
+      }
+      &--large {
+        min-width: 80px;
+      }
     }
   }
 }
