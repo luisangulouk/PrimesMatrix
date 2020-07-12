@@ -36,7 +36,11 @@ export const drawMatrix = (primos: number[]) => {
   for (let i = 0; i < primos.length; i++) {
     let row = [];
     for (let j = 0; j <= i; j++) {
-      row.push(primos[j] * primos[i]);
+      const pxp = primos[j] * primos[i];
+      row.push(pxp);
+      if(j!==i) {
+        matrix[j].push(pxp)
+      }
     }
     matrix.push(row);
   }

@@ -1,3 +1,14 @@
 .primes-container {
   padding: 15px 0;
 }
+
+.matrix {
+  &-row {
+    display: block;
+    &_cell {
+      display: table-cell;
+      padding: 10px;
+      min-width: 50px;
+    }
+  }
+}
