@@ -11,6 +11,14 @@
     &_cell {
       display: table-cell;
       padding: 10px;
+      border: 1px solid #fff;
+      &-header {
+        font-weight: 600;
+        background-color: #f2f2f2;
+      }
+      &-cell {
+        color: #595959;
+      }
       &--small {
         min-width: 50px;
       }

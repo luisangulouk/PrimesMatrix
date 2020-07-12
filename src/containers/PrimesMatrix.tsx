@@ -21,9 +21,13 @@ const PrimeMatrix = (props: Props)  => {
     <div className="container">
       <div className="row">
         <div className="col-lg-12 matrix-container">
-          {primes && primes.map(elem => {
-            return (<div key={elem} className="matrix-row">{elem && elem.map(prime => {
-              return (<div className={`matrix-row_cell matrix-row_cell${cellSize}`}>{prime}</div>)
+          {primes && primes.map((elem, index) => {
+            return (<div key={`row${index}`} className="matrix-row">{elem && elem.map(prime => {
+              return (
+              <div key={prime.value} 
+                className={`matrix-row_cell matrix-row_cell${cellSize} matrix-row_cell-${prime.class}`}
+                >{prime.value}
+              </div>)
             })}</div>)
           })}
         </div>

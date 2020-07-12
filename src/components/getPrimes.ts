@@ -1,5 +1,4 @@
 const isPrime = (subject: number) => {
-  // let prime = true;
   if (subject < 2) return false;
   if (subject != Math.round(subject)) return false;
 
@@ -35,8 +34,9 @@ export const drawMatrix = (primos: number[]) => {
   */
   for (let i = 0; i < primos.length; i++) {
     let row = [];
+    row.push({class: 'header', value: primos[i]});
     for (let j = 0; j <= i; j++) {
-      const pxp = primos[j] * primos[i];
+      const pxp = {class: 'cell', value: primos[j] * primos[i]};
       row.push(pxp);
       if(j!==i) {
         matrix[j].push(pxp)
@@ -44,6 +44,14 @@ export const drawMatrix = (primos: number[]) => {
     }
     matrix.push(row);
   }
+
+  primos.unshift(null);
+  matrix.unshift(primos.map(elem => {
+    return {
+      class: 'header',
+      value: elem
+    }
+  }));
 
   return matrix;
 };
