@@ -1,4 +1,5 @@
-const isPrime = (subject: number) => {
+export const isPrime = (subject: number) => {
+  if (!subject) return false;
   if (subject < 2) return false;
   if (subject != Math.round(subject)) return false;
 
@@ -9,6 +10,7 @@ const isPrime = (subject: number) => {
 };
 
 export const getPrimes = (count: number) => {
+  if(!count) return [];
   const primes = [];
   let i = 2;
 
@@ -26,6 +28,7 @@ export const getPrimes = (count: number) => {
 }
 
 export const drawMatrix = (primos: number[]) => {
+  if(!primos) return [];
   let matrix = [];
   /*
     0 i*i
