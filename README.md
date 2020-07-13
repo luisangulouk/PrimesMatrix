@@ -24,6 +24,7 @@ This app was developed using: React, Typescript and Webpack
 
 ## notes
 
+- At some point the matrix gets overflow from its container so it can be scroll in both directions.
 
 
 
